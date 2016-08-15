@@ -10,7 +10,12 @@
 
 # Body
 def store_to_dict():
-    pass
+    dict_word = {}
+    with open('words.txt', 'r') as fin:
+        for line in fin:
+            word = line.strip()
+            dict_word[word] = len(word)
+    return dict_word
 
 
 ###############################################################################
