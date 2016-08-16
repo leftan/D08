@@ -30,10 +30,12 @@ def invert_dict_old(d):
 def invert_dict_new(pledge):
     inverse = dict()
     for key, val in pledge.items():
-        if val not in inverse:
-            inverse[val] = [key]
-        else:
-            inverse[val].append(key)
+        inverse[val] = inverse.get(val, [])
+        inverse[val].append(key)
+        # if val not in inverse:
+        #     inverse[val] = [key]
+        # else:
+        #     inverse[val].append(key)
     return inverse
 
 

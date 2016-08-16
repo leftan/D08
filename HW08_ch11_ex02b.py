@@ -26,7 +26,7 @@ def print_hist_old(h):
 
 def print_hist_new(pledge):
     pledge_keys = pledge.keys()
-    pledge_sort = sorted(pledge_keys)
+    pledge_sort = sorted(pledge_keys, key=str.lower) #key=str.lower
     for word in pledge_sort:
         print(word, pledge[word])
 
